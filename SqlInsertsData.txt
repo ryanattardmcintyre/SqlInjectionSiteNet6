@@ -1,0 +1,17 @@
+﻿INSERT INTO Users (Username, Password, Mobile)
+VALUES 
+    ('admin', 'P@$$w0rd', 12345690),
+    ('user1', 'password123', 98765210),
+    ('user2', 'securepass', 55555555);
+
+
+	INSERT INTO Items (Name, Price, Description, SupplierInfo)
+VALUES 
+    ('Laptop', 999.99, 'A high-performance laptop', 'SupplierA'),
+    ('Smartphone', 499.99, 'Latest model smartphone', 'SupplierB');
+
+
+	INSERT INTO Comments (Content, UserId, CreatedAt)
+VALUES 
+    ('Great product, highly recommend!', 'admin', GETDATE()),
+    ('Could be better, but works fine.', 'user1', DATEADD(DAY, -1, GETDATE()));

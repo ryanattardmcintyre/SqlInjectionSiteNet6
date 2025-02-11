@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Items";
+}
+
+<div class="container mt-4">
+    <h2>Items List</h2>
+
+    <form method="post" asp-controller="Items" asp-action="Search">
+        <div class="mb-3">
+            <label for="searchTerm" class="form-label">Search Items</label>
+            <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Search by Name" />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <h3 class="mt-4">Item List</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

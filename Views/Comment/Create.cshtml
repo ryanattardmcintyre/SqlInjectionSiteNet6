@@ -1,0 +1,19 @@
+﻿@model Comment
+
+@{
+    ViewData["Title"] = "Add Comment";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="content">Comment</label>
+        <textarea id="content" name="content" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div>
+    <a href="@Url.Action("Index", "Comment")">Back to Comments</a>
+</div>

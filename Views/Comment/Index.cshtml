@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Comment>
+
+@{
+    ViewData["Title"] = "Comments";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+ 
+
+<div>
+    @foreach (var comment in Model)
+    {
+        <div class="comment">
+            <p><strong>Posted by: @comment.UserId</strong> on @comment.CreatedAt</p>
+           <div>@Html.Raw(comment.Content)</div>
+        </div>
+    }
+</div>
